@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "halcon1811-mcp"
+version = "0.1.0"
+description = "Local MCP server for AI-generated HDevelop programs on HALCON 18.11"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "mcp>=1.28,<2",
+  "Pillow>=10",
+  "pywinauto==0.6.8; platform_system == 'Windows'",
+  "pywin32>=306; platform_system == 'Windows'",
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Operating System :: Microsoft :: Windows",
+  "Topic :: Scientific/Engineering :: Image Processing",
+]
+
+[project.urls]
+Repository = "https://github.com/Austinlu29/halcon1811-mcp"
+Issues = "https://github.com/Austinlu29/halcon1811-mcp/issues"
+
+[project.scripts]
+halcon1811-mcp = "halcon1811_mcp.server:main"
+halcon1811-demo = "halcon1811_mcp.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

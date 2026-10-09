@@ -1,0 +1,19 @@
+* Replace the image path before saving or running this example.
+read_image (Image, 'C:/images/part.png')
+count_channels (Image, Channels)
+if (Channels = 3)
+    rgb1_to_gray (Image, GrayImage)
+else
+    access_channel (Image, GrayImage, 1)
+endif
+mean_image (GrayImage, FilteredImage, 3, 3)
+threshold (FilteredImage, Region, 128, 255)
+connection (Region, ConnectedRegions)
+select_shape (ConnectedRegions, SelectedRegions, 'area', 'and', 500, 100000)
+count_obj (SelectedRegions, Number)
+area_center (SelectedRegions, Area, Row, Column)
+dev_open_window (0, 0, 640, 480, 'black', WindowHandle)
+dev_display (Image)
+dev_set_draw ('margin')
+dev_set_color ('green')
+dev_display (SelectedRegions)
