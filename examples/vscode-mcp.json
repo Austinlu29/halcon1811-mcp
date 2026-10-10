@@ -1,0 +1,13 @@
+{
+  "servers": {
+    "halcon1811-ui": {
+      "type": "stdio",
+      "command": "C:/tools/halcon1811-mcp/.venv/Scripts/python.exe",
+      "args": ["-m", "halcon1811_mcp"],
+      "env": {
+        "HALCON_HDEVELOP_EXE": "C:/Program Files/MVTec/HALCON-18.11-Steady/bin/x64-win64/hdevelop.exe",
+        "HALCON_MCP_DATA_DIR": "C:/HALCONPrograms"
+      }
+    }
+  }
+}

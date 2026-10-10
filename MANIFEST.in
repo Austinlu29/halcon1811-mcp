@@ -1,4 +1,4 @@
 include README.md README.en.md CHANGELOG.md
-recursive-include examples *.json *.txt
+recursive-include examples *.json *.txt *.py
 recursive-include tests *.py
 recursive-include docs *.md
